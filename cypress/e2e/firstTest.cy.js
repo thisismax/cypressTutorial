@@ -44,8 +44,14 @@ describe('This is a Test... test', () => {
         cy.get('[data-cy="inputEmail1"]')
     })
 
-    it('second test',()=>{
-        
+    it.only('second test',()=>{
+        cy.visit('/');
+        cy.contains('Forms').click();
+        cy.contains('Form Layouts').click();
+
+        cy.get('[data-cy="signInButton"]');
+        cy.contains('Sign in');
+        cy.contains('[status="warning"]','Sign in');
     })
 
     it('third test',()=>{
